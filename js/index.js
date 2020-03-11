@@ -7,7 +7,7 @@ function clickEventhandler(event){
     console.log(event.currentTarget)
 }
 document.querySelector('header nav a').addEventListener(
-    'mouseover' , (clickEventhandler) => {
+    'click' , (clickEventhandler) => {
         alert("links don't work");
     }
 )
@@ -17,44 +17,56 @@ ito.addEventListener('mouseover', function(){
     ito.style.width ='200px';
 })
 
-const header = document.querySelector('header')
-header.addEventListener('keydown', function() {
-    header.style.background = 'darkblue';
-})
+const header1 = document.querySelector('body')
+header1.addEventListener("keydown", event => {
+   
+        header1.style.color = 'darkblue';
+   
+    // do something
+  });
 
 const nav = document.querySelector('.nav');
-nav.addEventListener('wheel', function() {
+nav.addEventListener('mouseout', function() {
     nav.style.background = 'green';
 })
 
 const iro = document.querySelector('#bus')
-iro.addEventListener('drag / drop', function() {
-    iro.style.display = 'none';
+iro.addEventListener('mouseenter', function() {
+    iro.style.width = '500%';
 })
 
+window.addEventListener('offline', (event) => {
+    alert("The network connection has been lost.");
+});
+
 const body = document.querySelector('body')
-body.addEventListener('load', function() {
-    body.style.background = 'orange';
+body.addEventListener('keyup', function() {
+    body.style.color = 'black';
 })
 
 const ixt = document.querySelector('.inverse-content .text-content')
-ixt.addEventListener('focus', function() {
+ixt.addEventListener('mousemove', function() {
     ixt.style.textAlign = 'center';
 })
 
-const don = document.querySelector('.content-pick')
-don.addEventListener('resize', function() {
-    don.style.color = 'green';
-    don.style.background = 'lightgrey';
+const header = document.querySelector('header')
+header.addEventListener('wheel', function() {
+    header.style.background = 'lightgreen';
 })
 
 const dxt =window //document.querySelector('.content-destination')
 dxt.addEventListener('scroll', function() {
   //  dxt.style.background = 'grey';
+  const scrollable =document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+  if (Math.ceil(scrolled) === scrollable){
+     
+      body.style.background = 'grey';
+  }
 })
 
 const fxt = document.querySelector('.footer p');
-fxt.addEventListener('select', function() {
+fxt.addEventListener('mouseup', function() {
     fxt.style.color = 'green';
 })
 
